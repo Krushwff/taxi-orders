@@ -1,7 +1,5 @@
 <?php
-require_once "config.php";
-require_once "class/order.php";
-require_once "OrderManager.php";
+require_once "src/app.php";
 
 $orderManager = new OrderManager($conn);
 
@@ -112,8 +110,8 @@ mysqli_close($conn); // Предполагая, что $conn все еще ну�
 
 
                     <!-- Кнопки управления формой -->
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <a href="index.php" class="btn btn-default">Cancel</a>
+                    <input type="submit" class="btn btn-primary" value="Применить">
+                    <a href="index.php" class="btn btn-default">Отменить</a>
                 </form>
             </div>
         </div>

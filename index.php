@@ -19,8 +19,7 @@
                     <a href="create.php" class="btn btn-success pull-right">Создать новый заказ</a>
                 </div>
                 <?php
-                require_once "config.php";
-                require_once "OrderManager.php";
+                require_once "src/app.php";
                 $order = new Views($conn);
                 $order->displayOrdersTable();
 

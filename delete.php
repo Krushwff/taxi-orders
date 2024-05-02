@@ -1,6 +1,5 @@
 <?php
-require_once "config.php";
-require_once "OrderManager.php";
+require_once "src/app.php";
 
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $id = $_POST["id"];

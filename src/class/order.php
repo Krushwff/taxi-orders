@@ -1,5 +1,7 @@
 <?php
-class Order {
+
+class Order
+{
     public $id;
     public $driverName;
     public $passengerName;
@@ -8,7 +10,8 @@ class Order {
     public $carNumber;
     public $status;
 
-    public function __construct($id, $driverName, $passengerName, $driverPhone, $passengerPhone, $carNumber, $status) {
+    public function __construct($id, $driverName, $passengerName, $driverPhone, $passengerPhone, $carNumber, $status)
+    {
         $this->id = $id;
         $this->driverName = $driverName;
         $this->passengerName = $passengerName;
@@ -18,7 +21,8 @@ class Order {
         $this->status = $status;
     }
 
-    public function validate() {
+    public function validate()
+    {
         $errors = [];
         if (empty($this->driverName)) {
             $errors['driverNameError'] = "Требуется имя водителя.";
