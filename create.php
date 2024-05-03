@@ -33,7 +33,8 @@ mysqli_close($conn);
 <html lang="rus">
 <head>
     <meta charset="UTF-8">
-    <title>Create Order</title>
+    <title>Создать заказ</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style>
         .wrapper { width: 1200px; margin: 0 auto; }
@@ -52,35 +53,31 @@ mysqli_close($conn);
 
                     <div class="form-group <?php echo (!empty($errors['driverNameError'])) ? 'has-error' : ''; ?>">
                         <label for="driver_name">Имя водителя</label>
-                        <input type="text" id="driver_name" name="driver_name" class="form-control" placeholder="Имя водителя">
+                        <input type="text" id="driver_name" name="driver_name" class="form-control" placeholder="Имя водителя" value="<?php echo isset($_POST['driver_name']) ? htmlspecialchars($_POST['driver_name']) : ''; ?>">
                         <span class="help-block"><?php echo $errors['driverNameError'] ?? ''; ?></span>
                     </div>
 
-                    <!-- Номер телефона водителя -->
                     <div class="form-group <?php echo (!empty($errors['driverPhoneError'])) ? 'has-error' : ''; ?>">
                         <label for="driver_phone">Номер телефона водителя</label>
-                        <input type="text" id="driver_phone" name="driver_phone" class="form-control" placeholder="Номер телефона водителя">
+                        <input type="text" id="driver_phone" name="driver_phone" class="form-control" placeholder="Номер телефона водителя" value="<?php echo isset($_POST['driver_phone']) ? htmlspecialchars($_POST['driver_phone']) : ''; ?>">
                         <span class="help-block"><?php echo $errors['driverPhoneError'] ?? ''; ?></span>
                     </div>
 
-                    <!-- Имя пассажира -->
                     <div class="form-group <?php echo (!empty($errors['passengerNameError'])) ? 'has-error' : ''; ?>">
                         <label for="passenger_name">Имя пассажира</label>
-                        <input type="text" id="passenger_name" name="passenger_name" class="form-control" placeholder="Имя пассажира">
+                        <input type="text" id="passenger_name" name="passenger_name" class="form-control" placeholder="Имя пассажира" value="<?php echo isset($_POST['passenger_name']) ? htmlspecialchars($_POST['passenger_name']) : ''; ?>">
                         <span class="help-block"><?php echo $errors['passengerNameError'] ?? ''; ?></span>
                     </div>
 
-                    <!-- Номер телефона пассажира -->
                     <div class="form-group <?php echo (!empty($errors['passengerPhoneError'])) ? 'has-error' : ''; ?>">
                         <label for="passenger_phone">Номер телефона пассажира</label>
-                        <input type="text" id="passenger_phone" name="passenger_phone" class="form-control" placeholder="Номер телефона пассажира">
+                        <input type="text" id="passenger_phone" name="passenger_phone" class="form-control" placeholder="Номер телефона пассажира" value="<?php echo isset($_POST['passenger_phone']) ? htmlspecialchars($_POST['passenger_phone']) : ''; ?>">
                         <span class="help-block"><?php echo $errors['passengerPhoneError'] ?? ''; ?></span>
                     </div>
 
-                    <!-- Номер машины -->
                     <div class="form-group <?php echo (!empty($errors['carNumberError'])) ? 'has-error' : ''; ?>">
                         <label for="car_number">Номер машины</label>
-                        <input type="text" id="car_number" name="car_number" class="form-control" placeholder="Номер машины">
+                        <input type="text" id="car_number" name="car_number" class="form-control" placeholder="Номер машины" value="<?php echo isset($_POST['car_number']) ? htmlspecialchars($_POST['car_number']) : ''; ?>">
                         <span class="help-block"><?php echo $errors['carNumberError'] ?? ''; ?></span>
                     </div>
 
@@ -103,5 +100,8 @@ mysqli_close($conn);
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="src/js/mask.js"></script>
 </body>
 </html>
